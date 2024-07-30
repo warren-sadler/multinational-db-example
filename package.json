@@ -1,0 +1,31 @@
+{
+  "name": "multinational-db",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "prisma": "^5.17.0",
+    "tsx": "^4.16.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "env-var": "^7.5.0",
+    "npm-run-all": "^4.1.5",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "push:au": "dotenv -e .env.au -- prisma db push --skip-generate",
+    "push:uk": "dotenv -e .env.uk -- prisma db push --skip-generate",
+    "push:us": "dotenv -e .env.us -- prisma db push --skip-generate",
+    "push:primary": "dotenv -e .env prisma db push",
+    "db:push": "run-p push:*"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

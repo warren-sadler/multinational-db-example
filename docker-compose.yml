@@ -1,0 +1,39 @@
+version: "3.10"
+
+services:
+  primary-pg:
+    image: postgres:alpine
+    container_name: primary-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+  us-pg:
+    image: postgres:alpine
+    container_name: us-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5433:5432"
+  eu-pg:
+    image: postgres:alpine
+    container_name: eu-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5434:5432"
+  au-pg:
+    image: postgres:alpine
+    container_name: au-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5435:5432"
